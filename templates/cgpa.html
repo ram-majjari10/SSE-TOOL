@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylescgpa.css') }}">
+
+<div class="cgpa-page">
+
+    <!-- LEFT CONTAINER -->
+    <div class="cgpa-left">
+        <h2>🎓 CGPA Calculator</h2>
+
+        <div class="grade-grid">
+
+            <div class="grade-box">
+                <label>S (10)</label>
+                <input type="number" id="s" min="0" value="0">
+            </div>
+
+            <div class="grade-box">
+                <label>A (9)</label>
+                <input type="number" id="a" min="0" value="0">
+            </div>
+
+            <div class="grade-box">
+                <label>B (8)</label>
+                <input type="number" id="b" min="0" value="0">
+            </div>
+
+            <div class="grade-box">
+                <label>C (7)</label>
+                <input type="number" id="c" min="0" value="0">
+            </div>
+
+            <div class="grade-box">
+                <label>D (6)</label>
+                <input type="number" id="d" min="0" value="0">
+            </div>
+
+            <div class="grade-box">
+                <label>E (5)</label>
+                <input type="number" id="e" min="0" value="0">
+            </div>
+
+        </div>
+
+        <button class="calc-btn" onclick="calculateCGPA()">Calculate CGPA</button>
+    </div>
+
+    <!-- RIGHT CONTAINER -->
+    <div class="cgpa-right">
+        <h2>📊 Result</h2>
+
+        <div class="result-box">
+            <h1 id="cgpa-result">0.00</h1>
+            <p id="cgpa-msg">Enter grades and calculate</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='cgpa.js') }}"></script>
+{% endblock %}

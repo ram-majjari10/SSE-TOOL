@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styleattendance.css') }}">
+
+<div class="attendance-page">
+
+    <!-- LEFT CONTAINER -->
+    <div class="attendance-left">
+        <h2>📋 Attendance Calculator</h2>
+
+        <div class="input-grid">
+
+            <div class="input-box">
+                <label>Minimum Attendance (%)</label>
+                <input type="number" id="min-percent" min="0" max="100" value="75">
+            </div>
+
+            <div class="input-box">
+                <label>Classes Attended</label>
+                <input type="number" id="classes-present" min="0" value="0">
+            </div>
+
+            <div class="input-box">
+                <label>Total Classes</label>
+                <input type="number" id="classes-total" min="1" value="0">
+            </div>
+
+        </div>
+
+        <button class="calc-btn" onclick="calculateAttendance()">Calculate Attendance</button>
+    </div>
+
+    <!-- RIGHT CONTAINER -->
+    <div class="attendance-right">
+        <h2>📊 Result</h2>
+
+        <div class="result-box">
+            <p id="attendance-result">Enter values and calculate</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='attendance.js') }}"></script>
+{% endblock %}

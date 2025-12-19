@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+
+    <h1 class="page-title"> Tools </h1>
+
+    <div class="card-wrapper">
+
+        <!-- Project Card 1 -->
+        <div class="project-card">
+            <div class="img-box">
+                <img src="{{ url_for('static', filename='images/cgpa.jpg') }}" alt="CGPA Project">
+            </div>
+
+            <div class="card-container">
+                <h2>CGPA-CALC</h2>
+                <p>Calculates the CGPA based on grades (S, A, B...)</p>
+                <a href="/cgpa" class="btn">View Project</a>
+            </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="project-card">
+            <div class="img-box">
+                <img src="{{ url_for('static', filename='images/atnds.jpg') }}" alt="Attendance Project">
+            </div>
+
+            <div class="card-container">
+                <h2>Attendance-CALC</h2>
+                <p>Calculates attendance based on attended & total classes</p>
+                <a href="/atnds" class="btn">View Project</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

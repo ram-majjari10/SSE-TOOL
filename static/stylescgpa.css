@@ -1,0 +1,141 @@
+/* PAGE LAYOUT */
+.cgpa-page {
+    min-height: 80vh;
+    padding: 120px 40px 60px;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+/* LEFT & RIGHT CONTAINERS */
+.cgpa-left, .cgpa-right {
+    width: 420px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.cgpa-left h2,
+.cgpa-right h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* GRID 2x3 */
+.grade-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+/* GRADE BOX */
+.grade-box {
+    background: rgba(0,0,0,0.2);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.grade-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,255,255,0.3);
+}
+
+.grade-box label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.grade-box input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* LIQUID BUTTON */
+.calc-btn {
+    margin-top: 30px;
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(120deg, aqua, #0077ff);
+    color: black;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.calc-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: white;
+    transform: translateX(-100%);
+    transition: 0.4s;
+    opacity: 0.3;
+}
+
+.calc-btn:hover::after {
+    transform: translateX(0);
+}
+
+/* RESULT */
+.result-box {
+    background: rgba(0,0,0,0.3);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+}
+
+#cgpa-result {
+    font-size: 3.5rem;
+    color: aqua;
+}
+
+#cgpa-msg {
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+    .cgpa-page {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* ============================= */
+/* 📱 MOBILE SUPPORT – CGPA */
+/* ============================= */
+@media (max-width: 768px) {
+
+    .cgpa-page {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .cgpa-left,
+    .cgpa-right {
+        width: 100%;
+    }
+
+    .grade-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .calc-btn {
+        font-size: 1rem;
+    }
+}
+
